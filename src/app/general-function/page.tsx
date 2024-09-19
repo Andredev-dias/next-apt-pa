@@ -42,7 +42,7 @@ const GeneralFunction: React.FC = () => {
         <div>
           <label htmlFor="n1">Número um:</label>
           <input
-            type="text"
+            type="number"
             id="n1"
             value={numero1}
             onChange={(e) => setNumero1(e.target.value)}
@@ -51,7 +51,7 @@ const GeneralFunction: React.FC = () => {
         <div>
           <label htmlFor="n2">Número dois:</label>
           <input
-            type="text"
+            type="number"
             id="n2"
             value={numero2}
             onChange={(e) => setNumero2(e.target.value)}

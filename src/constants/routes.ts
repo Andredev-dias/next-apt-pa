@@ -1,5 +1,6 @@
 export enum ROUTES {
   home = "/",
   maths = "/maths",
-  generalFunction = "/general-function",
+  generalFunction = "/funcao-reaproveitada",
+  hookPage = "/hook-page",
 }

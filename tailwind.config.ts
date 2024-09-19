@@ -9,8 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        clara: "var(--white)",
+        escura: "var(--black)",
+      },
+      fontSize: {
+        large: "36px",
+        medium: "24px",
+        small: "16px",
+      },
+      fontFamily: {
+        robFont: "var(--roboto)",
       },
     },
   },
