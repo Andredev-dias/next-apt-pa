@@ -15,17 +15,40 @@ interface IData {
 
 const AxiosPage = () => {
   const [data, setData] = useState<IData[]>([]);
+  const [erro, setErro] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>(
+    "Não foi possível buscar os dados!!!"
+  );
+  const [page, setPage] = useState<string>("");
 
   useEffect(() => {
-    api.get("/character").then((res) => {
-      console.log(res.data.results);
-      setData(res.data.results);
-    });
-  }, []);
+    api
+      .get(`/character/?page=${page}`)
+      .then((res) => {
+        setErro(false);
+        console.log(res.data.results);
+        setData(res.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+        if (error.response.status === 404) {
+          setErrorMessage("Página não encontrada!!!");
+        }
+        setErro(true);
+      });
+  }, [page]);
 
   return (
     <section>
       <h1>Página com useEffect e Axios</h1>
+      <input
+        className="bg-black text-white p-4"
+        placeholder="1/42, insira uma página para busca"
+        type="text"
+        value={page}
+        onChange={(e) => setPage(e.target.value)}
+      />
+      {erro && <h5>{errorMessage}</h5>}
       <Suspense fallback={<div>Loading...</div>}>
         {data.map((item, index) => (
           <div key={index}>
