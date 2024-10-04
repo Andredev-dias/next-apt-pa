@@ -17,6 +17,10 @@ const nextConfig = {
         source: "/funcao-reaproveitada",
         destination: "/general-function",
       },
+      {
+        source: "/pagina-com-axios",
+        destination: "/axios-page",
+      },
     ];
   },
 };

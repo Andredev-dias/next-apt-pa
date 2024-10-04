@@ -6,9 +6,10 @@ interface MenuProps {
   op2: string;
   op3: string;
   op4: string;
+  op5: string;
 }
 
-export const Menu: React.FC<MenuProps> = ({ op1, op2, op3, op4 }) => {
+export const Menu: React.FC<MenuProps> = ({ op1, op2, op3, op4, op5 }) => {
   return (
     <header>
       <nav className="text-large bg-black text-white font-robFont font-thin">
@@ -20,6 +21,7 @@ export const Menu: React.FC<MenuProps> = ({ op1, op2, op3, op4 }) => {
         <Link className="font-black" href={ROUTES.hookPage}>
           {op4}
         </Link>
+        <Link href={ROUTES.axiosPage}>{op5}</Link>
       </nav>
     </header>
   );
