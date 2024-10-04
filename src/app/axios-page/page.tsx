@@ -1,8 +1,9 @@
 "use client";
 
-import { api } from "@/constants/api";
 import { useEffect, useState, Suspense } from "react";
 import Image from "next/image";
+
+import { api } from "@/constants/api";
 
 interface IData {
   name: string;
